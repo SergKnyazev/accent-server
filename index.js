@@ -28,19 +28,19 @@ app.use('/sets', setsRoutes);
 const start = async () => {
   try {
     await database.authenticate();
-    console.log(chalk.greenBright(`=========================================================== DATABASE CONNECTION...`));
+    console.log(chalk.greenBright(`====================================== DATABASE CONNECTION...`));
     console.log(chalk.bgGreen.blackBright('  +++++++> Connection has been established successfully!  '));
 
     await AccentWords.sync({});
-    console.log(chalk.greenBright(`=========================================================== ACCENTWORDS SYNC...`));
+    console.log(chalk.greenBright(`====================================== ACCENTWORDS SYNC...`));
     console.log(chalk.bgGreenBright.blackBright('  AccentWords model has been synchronized successfully... '));
 
     await AccentSets.sync({});
-    console.log(chalk.greenBright(`=========================================================== ACCENTSETS SYNC...`));
+    console.log(chalk.greenBright(`====================================== ACCENTSETS SYNC...`));
     console.log(chalk.bgGreenBright.blackBright('  AccentSets model has been synchronized successfully... '));
 
     app.listen(PORT, () => {
-      console.log(chalk.greenBright(`============================================================= SERVER STARTED...`));
+      console.log(chalk.greenBright(`======================================== SERVER STARTED...`));
       console.log(chalk.bgGreen.blackBright(`  +++++++> Server started on port=${PORT}...`))
     });
   } catch (error) {
